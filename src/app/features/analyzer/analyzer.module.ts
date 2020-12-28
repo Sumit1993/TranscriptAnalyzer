@@ -9,12 +9,23 @@ import { RealComponent } from './components/real/real.component';
 import { ExpectedComponent } from './components/expected/expected.component';
 import { LandingComponent } from './pages/landing/landing.component';
 
-
+import { MatSelectModule } from '@angular/material/select';
+import { MatFormFieldModule } from '@angular/material/form-field';import {MatInputModule} from '@angular/material/input';
 @NgModule({
-  declarations: [TopBarComponent, NotSelectedComponent, AnalysisComponent, RealComponent, ExpectedComponent, LandingComponent],
+  declarations: [
+    TopBarComponent,
+    NotSelectedComponent,
+    AnalysisComponent,
+    RealComponent,
+    ExpectedComponent,
+    LandingComponent,
+  ],
   imports: [
     CommonModule,
-    AnalyzerRoutingModule
-  ]
+    AnalyzerRoutingModule,
+    MatSelectModule,
+    MatFormFieldModule,
+    MatInputModule,
+  ],
 })
-export class AnalyzerModule { }
+export class AnalyzerModule {}

@@ -1,1 +1,18 @@
-<p>top-bar works!</p>
+<div>
+    <mat-form-field appearance="fill">
+        <mat-label>Agent</mat-label>
+        <mat-select>
+            <mat-option *ngFor="let agent of agents | async" [(value)]="selectedAgent">
+                {{agent.full_name}}
+            </mat-option>
+        </mat-select>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+        <mat-label>Call</mat-label>
+        <mat-select>
+            <mat-option *ngFor="let call of calls | async" [(value)]="selectedCall">
+                {{call.call_start_time | date:"dd.MM.yyyy"}} - {{call.customer.full_name}}
+            </mat-option>
+        </mat-select>
+    </mat-form-field>
+</div>
