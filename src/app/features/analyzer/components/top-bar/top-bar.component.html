@@ -1,18 +1,29 @@
-<div>
-    <mat-form-field appearance="fill">
-        <mat-label>Agent</mat-label>
-        <mat-select>
-            <mat-option *ngFor="let agent of agents | async" [(value)]="selectedAgent">
-                {{agent.full_name}}
-            </mat-option>
-        </mat-select>
-    </mat-form-field>
-    <mat-form-field appearance="fill">
-        <mat-label>Call</mat-label>
-        <mat-select>
-            <mat-option *ngFor="let call of calls | async" [(value)]="selectedCall">
-                {{call.call_start_time | date:"dd.MM.yyyy"}} - {{call.customer.full_name}}
-            </mat-option>
-        </mat-select>
-    </mat-form-field>
+<div class="row">
+    <div class="col-6">
+        <mat-form-field appearance="fill">
+            <mat-label>Agent</mat-label>
+            <mat-select (selectionChange)="selectedAgent=$event.value;select()">
+                <mat-option *ngFor="let agent of agents | async" [value]="agent">
+                    {{agent.full_name}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>Call</mat-label>
+            <mat-select (selectionChange)="selectedCall=$event.value;select()">
+                <mat-option *ngFor="let call of calls | async" [value]="call">
+                    {{call.call_start_time | date:"dd.MM.yyyy"}} - {{call.customer[0].full_name}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+    </div>
+    <div class="col-2" *ngIf="showData">
+        <div>{{'Matching Sensitivity'| uppercase}}</div>
+    </div>
+    <div class="col-4" *ngIf="showData">
+        <div>
+            <mat-slider class="example-margin" [max]="100" [min]="0" [value]="slider" (input)="slider=$event.value">
+            </mat-slider>
+        </div>
+    </div>
 </div>

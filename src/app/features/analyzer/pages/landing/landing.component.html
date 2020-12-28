@@ -1,1 +1,5 @@
-<app-top-bar></app-top-bar>
+<app-top-bar (toggle)="showData=$event"></app-top-bar>
+<app-analysis *ngIf="showData; else NotSelected"></app-analysis>
+<ng-template #NotSelected>
+    <app-not-selected></app-not-selected>
+</ng-template>

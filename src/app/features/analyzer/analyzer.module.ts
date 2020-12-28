@@ -10,7 +10,9 @@ import { ExpectedComponent } from './components/expected/expected.component';
 import { LandingComponent } from './pages/landing/landing.component';
 
 import { MatSelectModule } from '@angular/material/select';
-import { MatFormFieldModule } from '@angular/material/form-field';import {MatInputModule} from '@angular/material/input';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatSliderModule } from '@angular/material/slider';
 @NgModule({
   declarations: [
     TopBarComponent,
@@ -26,6 +28,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';import {MatInp
     MatSelectModule,
     MatFormFieldModule,
     MatInputModule,
+    MatSliderModule,
   ],
 })
 export class AnalyzerModule {}
