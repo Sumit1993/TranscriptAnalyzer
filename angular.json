@@ -127,5 +127,8 @@
       }
     }
   },
-  "defaultProject": "TranscriptAnalyzer"
+  "defaultProject": "TranscriptAnalyzer",
+  "cli": {
+    "analytics": "ff129380-bb4f-48ef-88c9-8e370a6f73ef"
+  }
 }
